@@ -1,0 +1,91 @@
+<div class="container">
+
+	<div class="row">
+		<h4>{{title}}</h4>
+	</div>
+
+	<div class="row">
+		<hr>
+	</div>
+
+	<div class="row">
+
+		<div class="container">
+
+			<form role="form" name="produtoForm">
+				
+				<div class="row" ng-class="{'has-error': produtoForm.name.$invalid}">
+					<div class="col-md-1">
+						<i ng-show="produtoForm.name.$error.required" class="glyphicon glyphicon-pencil"></i> 
+						<label for="nomeInput">Nome</label>
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control error" id="nomeInput"
+							name="nome" ng-model="produto.nome" fend-focus="focusProdutoNomeInput" required>
+					</div>
+				</div>
+				<div class="row">&nbsp;</div>
+				
+				<div class="row" ng-class="{'has-error': produtoForm.valorCompra.$invalid}">
+					<div class="col-md-1">
+						<i ng-show="produtoForm.valorCompra.$error.required" class="glyphicon glyphicon-pencil"></i> 
+						<label for="valorCompraInput">Valor Compra</label>
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="valorCompraInput" name="valorCompra" 
+							ng-model="produto.valorCompra" required>
+					</div>
+				</div>
+				<div class="row">&nbsp;</div>
+				
+				<div class="row" ng-class="{'has-error': produtoForm.valorVenda.$invalid}">
+					<div class="col-md-1">
+						<i ng-show="produtoForm.valorVenda.$error.required" class="glyphicon glyphicon-pencil"></i> 
+						<label for="valorVendaInput">Valor Venda</label>
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control" id="valorVendaInput" name="valorVenda" 
+							ng-model="produto.valorVenda" required>
+					</div>
+				</div>
+				<div class="row">&nbsp;</div>
+				
+				<div class="row">
+					<label class="col-md-5" for="descricaoArea">Descrição</label>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<textarea class="form-control" id="descricaoArea"
+							name="descricao" ng-model="produto.descricao"></textarea>
+					</div>
+				</div>
+
+				<div class="row" ng-hide="showConfirm">&nbsp;</div>
+
+				<div class="row" ng-hide="showConfirm">
+					<div class="col-md-5">
+						<a href="#produtos" class="btn">Cancel</a>
+						<button ng-click="save()"
+							ng-disabled="isClean() || produtoForm.$invalid"
+							class="btn btn-primary">Save</button>
+						<button ng-click="remove()" ng-show="produto.id"
+							class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+
+				<div class="bs-callout bs-callout-danger" ng-show="showConfirm">
+					<h4>Confirm</h4>
+					<p>
+						Delete Produto 
+						<code>{{produto.nome}}</code>?
+					</p>
+					<button ng-click="destroy()" class="btn btn-danger">Delete</button>
+					<button ng-click="cancelRemove()" class="btn btn-default">Cancel</button>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+
+</div>

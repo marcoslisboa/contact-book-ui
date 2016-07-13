@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-controller="MainCtrl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Express</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Express - Application Java EE with Angular JS">
+  <meta name="author" content="Marcos Lisboa">
+
+  <link href="vendor/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/app.css" rel="stylesheet">
+  <link rel="shortcut icon" href="shared/img/favicon.ico">
+
+</head>
+<body>
+
+<div id="wrap">
+
+  <div ng-include="'app/main/layout/navbar.tpl.html'"></div>
+  <div ng-include="'app/main/layout/ie-warning-alert.tpl.html'"></div>
+
+  <div class="container ng-view"></div>
+
+</div>
+
+<div ng-include="'app/main/layout/footer.tpl.html'"></div>
+
+<script data-main="require.config" src="vendor/require.js/2.1.9/require.min.js"></script>
+
+</body>
+</html>
