@@ -1,0 +1,19 @@
+{
+  "name": "contact-book-ui",
+  "version": "1.0.0",
+  "description": "Contact Book UI - User Interface Application with Bootstrap and AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoslisboa/contact-book-ui.git"
+  },
+  "author": "Marcos Lisboa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoslisboa/contact-book-ui/issues"
+  },
+  "homepage": "https://github.com/marcoslisboa/contact-book-ui#readme"
+}
