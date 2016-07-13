@@ -1,7 +1,7 @@
 angular.module('mainApp')
-       .controller('contactsController', function ($scope){
+       .controller('usersController', function ($scope){
     $scope.counter = 3;
-    $scope.contacts = new Array({
+    $scope.users = new Array({
                                  id: 1,
                                  name: "Marcos Lisboa",
                                  age: 25,
@@ -33,42 +33,42 @@ angular.module('mainApp')
                                  birthday: new Date("April 8, 1991")
                                });
 
-    $scope.contact = {id: '', name: '', age: '', email: '', selected: false, gender: 'M', single: false};
+    $scope.user = {id: '', name: '', age: '', email: '', selected: false, gender: 'M', single: false};
 
     $scope.save = function () {
-        if ($scope.contact.id) {
-            for (var index = 0; index < $scope.contacts.length; index++) {
-                if ($scope.contact.id === $scope.contacts[index].id) {
-                    _.extend($scope.contacts[index], $scope.contact)
-                    $scope.contacts[index].selected = false;
+        if ($scope.user.id) {
+            for (var index = 0; index < $scope.users.length; index++) {
+                if ($scope.user.id === $scope.users[index].id) {
+                    _.extend($scope.users[index], $scope.user)
+                    $scope.users[index].selected = false;
                     break;
                 }
             }
         } else {
             $scope.counter += 1;
-            var element = $scope.contact;
+            var element = $scope.user;
             _.extend(element, {id: $scope.counter});
-            $scope.contacts.push(element);
+            $scope.users.push(element);
         }
 
-        $scope.contact = {};
+        $scope.user = {};
     }
 
     $scope.remove = function (item) {
-       for (var index = 0; index < $scope.contacts.length; index++) {
-           if (item.id === $scope.contacts[index].id) {
-               $scope.contacts.splice(index, 1);
+       for (var index = 0; index < $scope.users.length; index++) {
+           if (item.id === $scope.users[index].id) {
+               $scope.users.splice(index, 1);
                break;
            }
        }
     }
 
     $scope.edit = function (item) {
-       for (var index = 0; index < $scope.contacts.length; index++) {
-          $scope.contacts[index].selected = false;
+       for (var index = 0; index < $scope.users.length; index++) {
+          $scope.users[index].selected = false;
        }
        item.selected = true;
-       _.extend($scope.contact, item);
+       _.extend($scope.user, item);
     }
 
     $scope.sort = function (field) {

@@ -1,18 +1,17 @@
-angular.module('mainApp')
-       .config(['$routeProvider', function($routeProvider){
+angular.module('mainApp').config(['$routeProvider', function($routeProvider){
   $routeProvider.when('/', {
-    controller:'contactsController',
-    templateUrl:'list.html'
+    controller:'usersController',
+    templateUrl:'views/user/list.html'
   });
 
   $routeProvider.when('/new', {
-    controller:'contactsController',
-    templateUrl:'form.html'
+    controller:'usersController',
+    templateUrl:'views/user/form.html'
   });
 
-  $routeProvider.when('/edit', {
-    controller:'contactsController',
-    templateUrl:'form.html'
+  $routeProvider.when('/edit/:id', {
+    controller:'usersController',
+    templateUrl:'views/user/form.html'
   });
 
   $routeProvider.otherwise({redirectTo: '/'});
