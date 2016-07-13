@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/marcoslisboa/contact-book-ui/issues"
   },
-  "homepage": "https://github.com/marcoslisboa/contact-book-ui#readme"
+  "homepage": "https://github.com/marcoslisboa/contact-book-ui#readme",
+  "dependencies" : { 
+    "angular": "1.5.7",
+    "angular-i18n": "1.5.7 ",
+    "angular-messages": "1.5.7 ",
+    "angular-resource": "1.5.7 ",
+    "angular-route": "1.5.7 ",
+    "bootstrap": "3.3.6"
+  }
+
 }
